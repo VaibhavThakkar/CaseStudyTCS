@@ -13,7 +13,5 @@
 	<button onclick="window.location.href = 'stbpage.jsp';">MANAGE STB </button>
 	<button onclick="window.location.href = 'managechannel.jsp';">MANAGE Channel </button>
 	<button onclick="window.location.href = 'channelpackage.jsp';">CHANNEL PACKAGE </button>
-	 <button type="button" class="btn btn-primary">Primary</button>
-	 <button type="button" class="btn btn-seconday">Secondary</button>
 </body>
 </html>

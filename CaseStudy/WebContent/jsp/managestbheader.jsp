@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Manage STB</title>
 </head>
 <body>
-	TESTING
+	<h1><center>Manage STB</center></h1>
+	<p align="center">
+	<a href="/CaseStudy/jsp/stbpage/createstbpage.jsp">Create</a>&#160;&#183;&#160;
 </body>
 </html>
