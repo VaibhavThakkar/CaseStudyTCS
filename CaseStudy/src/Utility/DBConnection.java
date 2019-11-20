@@ -14,9 +14,7 @@ public class DBConnection implements MyProvider {
 		conn = DriverManager.getConnection(url, uname, pswd);
 		System.out.println("Connection Established");
 		
-		return conn;
-		
-		
+		return conn;				
 	}
 
 }
