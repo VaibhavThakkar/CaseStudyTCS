@@ -10,31 +10,11 @@
 </head>
 <body>
 Read the Table
-<center>
-		<h2>View All Contacts Success</h2>
-		<a></a>
-		<table border="1" cellpadding="1" cellspacing="0" width="50%"">
-			<tr>
-				<td bgcolor="#FAFAF9" style="padding-left: 10px;">Box Type</td>
-				<td bgcolor="#FAFAF9" style="padding-left: 10px;">Price</td>
-				<td bgcolor="#FAFAF9" style="padding-left: 10px;">Installation Charge</td>
-				<td bgcolor="#FAFAF9" style="padding-left: 10px;">Updation Charge</td>
-				<td bgcolor="#FAFAF9" style="padding-left: 10px;">Discount</td>
-				<td bgcolor="#FAFAF9" style="padding-left: 10px;">Deposit</td>
-				<td bgcolor="#FAFAF9" style="padding-left: 10px;">Refundable Amount</td>
-			</tr>
-		<c:forEach items="${stbolist}" var="stbo">
-			<tr>
-				<td><c:out value="${stbo.getTopBoxType() }"/></td>
-				<td><c:out value="${stbo.getPrice() }"/></td>
-				<td><c:out value="${stbo.getInstallationCharge() }"/></td>
-				<td><c:out value="${stbo.getUpdationCharge() }"/></td>
-				<td><c:out value="${stbo.getDiscount() }"/></td>
-				<td><c:out value="${stbo.getBillingType() }"/></td>
-				<td><c:out value="${stbo.getRefundableDeposit() }"/></td>
-				</tr>
-		</c:forEach>
-		</table>
+<form method="post" action="/CaseStudy/servlets/casestudyservlet">
+	<center>
+	<input type="hidden" name="option" value="Read">
+	<input type="submit" value="Read">
 	</center>
+</form>
 </body>
 </html>

@@ -5,15 +5,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Update STB</title>
+<title>Update Success</title>
 </head>
 <body>
-	<center><h3>Update STB</h3></center>
-	<form method="post" action="/CaseStudy/servlets/casestudyservlet">
-		Enter ID: <input type="number" name="id"><br />
-		Enter Box Type: <input type="text" name="topboxtype">
-		<input type="hidden" name="option" value="Update">
-		<input type="submit" value="Submit">
-	</form>
+<h1>SUCCESSFULLY UPDATED INFORMATION</h1>
 </body>
 </html>

@@ -13,17 +13,17 @@
 	<jsp:useBean id="stbo" class="com.tcs.java.STBObject" scope="request"></jsp:useBean>
 	<table border="1" cellpadding="1" cellspacing="0" width="50%"">
 			<tr>
-				<td bgcolor="#FAFAF9" style="padding-left: 10px;">Length</td>
-				<td><jsp:getProperty name="stbo" property="length" /></td>
+				<td bgcolor="#FAFAF9" style="padding-left: 10px;">Billing Type</td>
+				<td><jsp:getProperty name="stbo" property="billingType" /></td>
 			</tr>
 			<tr>
-				<td bgcolor="#FAFAF9" style="padding-left: 10px;">Width</td>
-				<td><jsp:getProperty name="stbo" property="width" /></td>
+				<td bgcolor="#FAFAF9" style="padding-left: 10px;">Refundable Deposit</td>
+				<td><jsp:getProperty name="stbo" property="refundableDeposit" /></td>
 			</tr>
 
 			<tr>
-				<td bgcolor="#FAFAF9" style="padding-left: 10px;">Breadth</td>
-				<td><jsp:getProperty name="stbo" property="breadth" /></td>
+				<td bgcolor="#FAFAF9" style="padding-left: 10px;">Top Box Type</td>
+				<td><jsp:getProperty name="stbo" property="topBoxType" /></td>
 			</tr>
 			<tr>
 				<td bgcolor="#FAFAF9" style="padding-left: 10px;">Discount</td>

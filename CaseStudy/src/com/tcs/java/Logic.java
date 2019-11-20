@@ -27,6 +27,8 @@ public class Logic {
 		}
 		return conn;
 	}
+	
+	//Read 
 	public static ArrayList readSTBPage() throws Exception{
 		Connection dbConn = null;
 		PreparedStatement stmt = null;
@@ -34,17 +36,12 @@ public class Logic {
 		ArrayList list = new ArrayList();
 		STBObject stbo = null;
 		try{
-			System.out.println("1");
 			dbConn = getConnection();
-			System.out.println("2");
 			stmt = dbConn.prepareStatement("SELECT * FROM SETUPBOX_DEATILS;");
 			rs = stmt.executeQuery();
 			while(rs.next()){
 				System.out.println(rs.getString(2));
-				System.out.println("4");
-				stbo = new STBObject(rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getInt(5), rs.getDouble(6), rs.getString(7), rs.getString(8));
-				System.out.println("FKIN GUY" + stbo.getTopBoxType());
-				
+				stbo = new STBObject(rs.getInt(1),rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getInt(5), rs.getDouble(6), rs.getString(7), rs.getString(8));				
 				list.add(stbo);
 			}
 		}
@@ -60,5 +57,78 @@ public class Logic {
 //			dbConn.close();
 //		}
 		return list;
+	}
+	
+	//Create
+	public static void createSTBPage(STBObject stbo){
+		Connection dbConn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		int rowsInserted = 0;
+		try{
+			dbConn = getConnection();
+			stmt = dbConn.prepareStatement("INSERT INTO SETUPBOX_DEATILS VALUES(?,?,?,?,?,?,?,?);");
+			stmt.setInt(1, stbo.getId());
+			stmt.setString(2, stbo.getTopBoxType());
+			stmt.setInt(3, stbo.getPrice());
+			stmt.setInt(4, stbo.getInstallationCharge());
+			stmt.setInt(5, stbo.getUpdationCharge());
+			stmt.setDouble(6, stbo.getDiscount());
+			stmt.setString(7, stbo.getBillingType());
+			stmt.setString(8, stbo.getRefundableDeposit());
+			rowsInserted = stmt.executeUpdate();
+			
+			if(rowsInserted != 1){
+				throw new Exception("Error in inserting row");
+			}
+		}
+		catch (SQLException sqle) {
+			sqle.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	//Update STB
+	public static void updateSTBPage(STBObject stbo){
+		Connection dbConn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		int rowsUpdated = 0;
+		try{
+			dbConn = getConnection();
+			stmt = dbConn.prepareStatement("UPDATE SETUPBOX_DEATILS SET SETUPBOX_NAME = ? where ID = ?;" );
+			stmt.setString(1, stbo.getTopBoxType());
+			stmt.setInt(2, stbo.getId());
+			rowsUpdated = stmt.executeUpdate();
+
+			if (rowsUpdated != 1) {
+				throw new Exception("Error in updating the row");
+
+			}
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
+	//Delete STB
+	public static void deleteSTBPage(STBObject stbo){
+		Connection dbConn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		int rowsUpdated = 0;
+		try{
+			dbConn = getConnection();
+			stmt = dbConn.prepareStatement("DELETE FROM SETUPBOX_DEATILS WHERE ID = ?;");
+			stmt.setInt(1, stbo.getId());
+			rowsUpdated = stmt.executeUpdate();
+			if(rowsUpdated != 1){
+				throw new Exception("Error in deleting row");
+			}
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 }

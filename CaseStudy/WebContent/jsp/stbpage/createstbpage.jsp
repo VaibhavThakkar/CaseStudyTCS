@@ -10,16 +10,15 @@
 <body>
 	<b></button>
 	<form method="post" action="/CaseStudy/servlets/casestudyservlet">
+		Enter Unique ID: <input type="number" name="id"><br />
 		Enter Box Type: <input type="text" name="topboxtype"><br/>
-		Enter Dimensions: <input type="text" name="length"> 
-						  <input type="text" name="breadth">
-						  <input type="text" name="width"><br/>
 		Enter Price: <input type="number" name="price"><br/>
 		Enter Installation Charge: <input type="number" name="installationCharge"><br/>
-		Enter Upgradation Charge: <input type="number" name="upgradationCharge"><br/>
+		Enter Upgradation Charge: <input type="number" name="updationCharge"><br/>
 		Enter Discount: <input type="number" name="discount"><br/>
 		Enter Billing Type: <input type="text" name="billingType"><br/>
-		Enter Refundable Deposit Amount: <input type="text" name=refundableDepositAmount">
+		Enter Refundable Deposit Amount: <input type="text" name=refundableDeposit">
+		<input type="hidden" name="option" value="Create">
 		<input type="submit" value="Submit">
 	 </form>
 </body>

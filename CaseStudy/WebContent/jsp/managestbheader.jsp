@@ -13,6 +13,6 @@
 	<a href="/CaseStudy/jsp/stbpage/readstbpage.jsp">Read</a>&#160;&#183;&#160;
 	<a href="/CaseStudy/jsp/stbpage/updatestbpage.jsp">Update</a>&#160;&#183;&#160;
 	<a href="/CaseStudy/jsp/stbpage/deletestbpage.jsp">Delete</a>&#160;&#183;&#160;
-	
+	<br/>
 </body>
 </html>

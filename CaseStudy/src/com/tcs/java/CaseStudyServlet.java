@@ -20,39 +20,85 @@ public class CaseStudyServlet extends HttpServlet {
 		response.setContentType("text/html");
 		STBObject stbo = new STBObject();
 		PrintWriter out = response.getWriter();
-//		String boxtype = request.getParameter("topboxtype");
-//		String length = request.getParameter("length");
-//		String width = request.getParameter("width");
-//		String breadth = request.getParameter("breadth");
-//		stbo.setTopBoxType(boxtype);
-//		stbo.setLength(length);
-//		stbo.setWidth(width);
-//		stbo.setBreadth(breadth);
-//		stbo.setBillingType(request.getParameter("billingType"));
-//		stbo.setDiscount(Double.parseDouble(request.getParameter("discount")));
-//		stbo.setInstallationCharge(Integer.parseInt(request.getParameter("installationCharge")));
-//		stbo.setRefundableDeposit(request.getParameter("refundableDeposit"));
+		String option = request.getParameter("option");
 		Logic logic = new Logic();
-		ArrayList list = new ArrayList();
-		STBObject[] stbolist = null;
-		try {
-			list = logic.readSTBPage();
-			Object[] array = list.toArray(new STBObject[list.size()]);
-			stbolist = new STBObject[list.size()];
-			for(int i = 0; i < array.length; i++){
-				stbolist[i] = (STBObject)array[i];
+		switch(option){
+		
+		case "Read": 
+			ArrayList list = new ArrayList();
+			STBObject[] stbolist = null;
+			try {
+				list = logic.readSTBPage();
+				Object[] array = list.toArray(new STBObject[list.size()]);
+				stbolist = new STBObject[list.size()];
+				for(int i = 0; i < array.length; i++){
+					stbolist[i] = (STBObject)array[i];
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			request.setAttribute("stbolist", stbolist);
+			RequestDispatcher rd = request.getRequestDispatcher("/jsp/stbpage/readsuccessstbpage.jsp");
+//			request.setAttribute("stbo", stbo);
+//			RequestDispatcher rd = request.getRequestDispatcher("/jsp/stbpage/createsuccess.jsp");
+			rd.forward(request, response);
+			break;
+			
+			
+		case "Create":
+			
+			String boxtype = request.getParameter("topboxtype");
+			stbo.setId(Integer.parseInt(request.getParameter("id")));
+			stbo.setTopBoxType(boxtype);
+			stbo.setBillingType(request.getParameter("billingType"));
+			stbo.setDiscount(Double.parseDouble(request.getParameter("discount")));
+			stbo.setInstallationCharge(Integer.parseInt(request.getParameter("installationCharge")));
+			stbo.setRefundableDeposit(request.getParameter("refundableDeposit"));
+			stbo.setPrice(Integer.parseInt(request.getParameter("price")));
+			stbo.setUpdationCharge(Integer.parseInt(request.getParameter("updationCharge")));
+			try{
+				logic.createSTBPage(stbo);
+			}
+			catch(Exception e){
+				e.printStackTrace();
+			}
+			request.setAttribute("stbo", stbo);
+			RequestDispatcher rdr = request.getRequestDispatcher("/jsp/stbpage/createsuccess.jsp");
+			rdr.forward(request, response);
+			
+			break;
+			
+		case "Update": 
+			stbo.setId(Integer.parseInt(request.getParameter("id")));
+			stbo.setTopBoxType(request.getParameter("topboxtype"));
+			try{
+				logic.updateSTBPage(stbo);
+			}
+			catch(Exception e){
+				e.printStackTrace();
+			}
+			request.setAttribute("stbo", stbo);
+			RequestDispatcher rdu = request.getRequestDispatcher("/jsp/stbpage/updatesuccessstbpage.jsp");
+			rdu.forward(request, response);
+			break;
+		case "Delete":
+			stbo.setId(Integer.parseInt(request.getParameter("id")));
+			try{
+				logic.deleteSTBPage(stbo);
+			}
+			catch(Exception e){
+				e.printStackTrace();
+			}
+			request.setAttribute("stbo", stbo);
+			RequestDispatcher rdd = request.getRequestDispatcher("/jsp/stbpage/deletesuccessstbpage.jsp");
+			rdd.forward(request, response);
+			break;
 		}
-		request.setAttribute("stbolist", stbolist);
-		RequestDispatcher rd = request.getRequestDispatcher("/jsp/stbpage/readstbpage.jsp");
-//		request.setAttribute("stbo", stbo);
-//		RequestDispatcher rd = request.getRequestDispatcher("/jsp/stbpage/createsuccess.jsp");
-		rd.forward(request, response);
-//		out.println(boxtype + " " + length + " " + width + " " + breadth);
-//		 response.sendRedirect("/CaseStudy/jsp/stbpage/createsuccess.jsp");
+		
+			
+		
+		
 	}
 
 }
