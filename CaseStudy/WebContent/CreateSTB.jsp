@@ -29,6 +29,16 @@
     margin-bottom: 16px; /* Bottom margin */
     resize: vertical 
     }
+    
+    input[type=submit] {
+    background-color: #e4f5c1;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
 </style>
 </head>
 <body>
@@ -58,7 +68,7 @@ REFUNDABLE_DEPOSIT VARCHAR(225));  -->
     Length:<br> <input type="number" name="length"><br>
     Breadth:<br> <input type="number" name="breadth"><br>
     Width:<br> <input type="number" name="width"><br>
-    
+    <input type = "submit" name= "confirm">
     
     </form>
 </body>
