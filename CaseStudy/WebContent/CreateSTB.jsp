@@ -9,42 +9,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <style>
-     .bg-1 {
-    background-color: #787a74; /* Grey */
-    color: #000000; /*black*/
-  }
-  
-  
-  .bg-2 {
-    background-color: #000000; /* Dark Blue */
-    color: #ffffff;  /*white*/
-  }
-  .bg-3 {
-    background-color: #ffffff; /* White */
-    color: #555555;
-  }
- 
-  head{
-  font-family: 'Ubuntu Bold', sans-serif;
-  
-  }
-  body {
-font-family: 'Ubuntu Bold', sans-serif;
-}
-  .container-fluid {
-  
-  background-color:#020300;/*black*/
-  padding-top: 70px;
-  padding-bottom: 70px;
-}
- .jumbotron{
- background-color:#e4f5c1;
- }
-.btn 
-{
-  background-color:#e4f5c1;
-  color:#000000;
-}
       input[type=text], select, textarea {
     width: 50%; /* Full width */
     padding: 12px; /* Some padding */
@@ -68,12 +32,34 @@ font-family: 'Ubuntu Bold', sans-serif;
 </style>
 </head>
 <body>
-    <h1>Setup Box Home Page</h1>
-    <h2>Choose what you want to do with your setup box</h2>
+    <h1>Package stuff</h1>
     <br>
-      <a href="CreateSTB.jsp" class="btn btn-primary btn-block">Create a set top box</a>
-    <a href="readSTB.jsp" class="btn btn-primary btn-block">View set top box details</a>
-    <a href="updateSTB.jsp"class="btn btn-primary btn-block">Update or delete set top box details</a>
+    <h3>Setup Box Details</h3>
+    <!-- INSTALLATION_CHARGE INT,
+UPDATION_CHARGE INT,
+DISCOUNT FLOAT(10),
+BILLING_TYPE VARCHAR(225),
+REFUNDABLE_DEPOSIT VARCHAR(225));  -->
+    <form>
+       Setup Box name:<br><input type="text" name="STBname">
+       <input type="hidden" name="STBname"/>
+       <br>
+  <br>
+  Price:<br><input type="number" name="price"><br>
+   <br>
+   Installation charge:<br><input type="number" name="Iprice"><br>
+   <br>
+   Discount:<br><input type="number" name="discount"><br>
+   <br>
+   Billing Type:<br><input type="text" name="billType"><br>
+   <br>
+    </form>
+    <form><h3>Dimensions</h3><br>
+    Length:<br> <input type="number" name="length"><br>
+    Breadth:<br> <input type="number" name="breadth"><br>
+    Width:<br> <input type="number" name="width"><br>
     
+    
+    </form>
 </body>
 </html>
