@@ -1,4 +1,4 @@
-package Logic;
+package Data;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.sql.*;
 
 public class InventoryDetails {
-	public static void UploadInventoryDetail(Connection con) throws SQLException, IOException {
-		BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\thakk\\Downloads\\test.csv"));
+	public static void UploadInventoryDetail(Connection con, String filename) throws SQLException, IOException {
+		BufferedReader reader = new BufferedReader(new FileReader(filename));
 		String insertQuery = "Insert into INVENTORY_DETAILS values (?,?,?,?,?,?)";
         PreparedStatement pstmt = con.prepareStatement(insertQuery);
         String[] rowData = null;
