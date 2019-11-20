@@ -4,6 +4,6 @@ public interface MyProvider {
 	
 	String url ="jdbc:oracle:thin:@localhost:1521:xe";
 	String uname = "system";
-	String pswd = "root";
+	String pswd = "TCS1234";
 
 }

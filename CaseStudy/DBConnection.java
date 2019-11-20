@@ -11,7 +11,7 @@ public class DBConnection implements MyProvider {
 		Class.forName(driverinfo);
 		System.out.println("Driver Registered");
 		
-		conn = DriverManager.getConnection(url, uname, pswd);
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/xe", "newroot", "root");
 		System.out.println("Connection Established");
 		
 		return conn;

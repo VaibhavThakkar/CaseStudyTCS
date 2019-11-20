@@ -10,5 +10,9 @@
 	<h1><center>Manage STB</center></h1>
 	<p align="center">
 	<a href="/CaseStudy/jsp/stbpage/createstbpage.jsp">Create</a>&#160;&#183;&#160;
+	<a href="/CaseStudy/jsp/stbpage/readstbpage.jsp">Read</a>&#160;&#183;&#160;
+	<a href="/CaseStudy/jsp/stbpage/updatestbpage.jsp">Update</a>&#160;&#183;&#160;
+	<a href="/CaseStudy/jsp/stbpage/deletestbpage.jsp">Delete</a>&#160;&#183;&#160;
+	
 </body>
 </html>
