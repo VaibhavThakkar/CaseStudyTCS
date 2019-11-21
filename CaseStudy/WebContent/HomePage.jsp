@@ -20,7 +20,7 @@
   
   
   .bg-2 {
-    background-color: #000000; /* Dark Blue */
+    background-color: #000000; /* black */
     color: #ffffff;  /*white*/
   }
   .bg-3 {

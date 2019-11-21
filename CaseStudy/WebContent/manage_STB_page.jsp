@@ -74,6 +74,7 @@ font-family: 'Ubuntu Bold', sans-serif;
       <a href="CreateSTB.jsp" class="btn btn-primary btn-block">Create a set top box</a>
     <a href="readSTB.jsp" class="btn btn-primary btn-block">View set top box details</a>
     <a href="updateSTB.jsp"class="btn btn-primary btn-block">Update or delete set top box details</a>
+    <a href="inventorySTB.jsp"class="btn btn-primary btn-block">Inventory</a>
     
 </body>
 </html>

@@ -9,12 +9,12 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <style>
-      input[type=text], select, textarea {
+      input[type=text],[type=hidden], select, textarea {
     width: 50%; /* Full width */
     padding: 12px; /* Some padding */
     border: 1px solid #ccc; /* Gray border */
     border-radius: 4px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    box-sizing: border-box; 
     margin-top: 6px; /* Add a top margin */
     margin-bottom: 16px; /* Bottom margin */
     resize: vertical 
@@ -24,7 +24,7 @@
     padding: 12px; /* Some padding */
     border: 1px solid #ccc; /* Gray border */
     border-radius: 4px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    box-sizing: border-box; 
     margin-top: 6px; /* Add a top margin */
     margin-bottom: 16px; /* Bottom margin */
     resize: vertical 
@@ -56,8 +56,15 @@ input[type=button] {
     <h3>Setup Box Details</h3>
     
     <form>
-       Setup Box name:<br><input type="text" name="STBname">
+       Setup Box name:<br>
        <input type="hidden" name="STBname"/>
+       
+        <select id="STBname" name="STBname">
+            <option value="standard">Standard</option>
+            <option value="hd">HD</option>
+            <option value="HD+">HD+</option>
+            <option value="IPTV">IPTV</option>
+        </select>
        <br>
   <br>
   Price:<br><input type="number" name="price"><br>
