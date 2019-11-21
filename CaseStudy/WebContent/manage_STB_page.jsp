@@ -67,7 +67,7 @@ font-family: 'Ubuntu Bold', sans-serif;
     }
 </style>
 </head>
-<body>
+<body name="STBpage" id="STBpage">
     <h1>Setup Box Home Page</h1>
     <h2>Choose what you want to do with your setup box</h2>
     <br>

@@ -34,7 +34,16 @@
     background-color: #e4f5c1;
     border: none;
     color: black;
-    padding: 16px 32px;
+    padding: 16px 32px; 
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+input[type=button] {
+    background-color: #e4f5c1;
+    border: none;
+    color: black;
+    padding: 16px 32px; 
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
@@ -45,11 +54,7 @@
     <h1>Package stuff</h1>
     <br>
     <h3>Setup Box Details</h3>
-    <!-- INSTALLATION_CHARGE INT,
-UPDATION_CHARGE INT,
-DISCOUNT FLOAT(10),
-BILLING_TYPE VARCHAR(225),
-REFUNDABLE_DEPOSIT VARCHAR(225));  -->
+    
     <form>
        Setup Box name:<br><input type="text" name="STBname">
        <input type="hidden" name="STBname"/>
@@ -64,11 +69,12 @@ REFUNDABLE_DEPOSIT VARCHAR(225));  -->
    Billing Type:<br><input type="text" name="billType"><br>
    <br>
     </form>
-    <form><h3>Dimensions</h3><br>
+    <form  action="manage_STB_page.jsp"><h3>Dimensions</h3><br>
     Length:<br> <input type="number" name="length"><br>
     Breadth:<br> <input type="number" name="breadth"><br>
     Width:<br> <input type="number" name="width"><br>
-    <input type = "submit" name= "confirm">
+    <input type = "submit" name= "submit" value="submit" >
+    <input type = "submit" name= "STBpage" value = "back">
     
     </form>
 </body>
