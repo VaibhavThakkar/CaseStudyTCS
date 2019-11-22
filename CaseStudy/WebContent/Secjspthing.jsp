@@ -1,12 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-
+<title>Channel_Add</title>
 <style>
      .bg-1 {
     background-color: #787a74; /* Grey */
@@ -74,22 +71,32 @@ font-family: 'Ubuntu Bold', sans-serif;
     cursor: pointer;
 }
 </style>
-<title>Update Channel</title>
 
 <form>
-<body>
 
-Channel ID<br><input type="text" name="Cname" value="" ><br/>  
-<a href="Secjspthing.jsp" class="btn btn-primary btn-block">Update Channel</a>
+Channel Name<br><input type="text" name="Cname" value="" ><br/>  
+Channel Band<br><input type="text" name="Cband"  value="" ><br/>  
+Video Frequency<br><input type="number" min="40" max="225"name ="vfreq"  ></br>
+Audio Carrier Frequency<br><input type="number"min="45" max="230" name="afreq" ></br>
+<DIV></DIV>
+Charge Type <br>
+<input type="radio" name="Ctype" value="FTA">FTA<br>
+<input type="radio" name="Ctype" value="PAID">PAID<br>
+
+Transmission Type<br>
+<input type="radio" name="ttype" value="STANDARD">STANDARD<BR>
+<input type="radio" name="ttype" value="HD">HD<br>
+
+Channel Charge<br><input type="number"min="1" max="10000" name ="charge"><br>
 
 
+<input type="submit" value="Register"/>  
 
 
 </form>  
 
 
 </head>
-
 <body>
 
 </body>
