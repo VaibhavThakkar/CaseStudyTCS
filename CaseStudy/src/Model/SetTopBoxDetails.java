@@ -11,6 +11,9 @@ public class SetTopBoxDetails {
 	String bill_type;
 	String refund_deposit;
 	
+	
+	
+
 	public int getBox_id() {
 		return box_id;
 	}
